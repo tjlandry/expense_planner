@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-
 class NewTransaction extends StatefulWidget {
   final Function addNewTx;
 
-  
   NewTransaction(this.addNewTx);
 
   @override
@@ -33,6 +31,8 @@ class _NewTransactionState extends State<NewTransaction> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 5,
+      margin: EdgeInsets.fromLTRB(7, 10, 7, 0),
+      color: Theme.of(context).scaffoldBackgroundColor,
       child: Container(
         margin: EdgeInsets.all(10),
         child: Column(
@@ -50,14 +50,23 @@ class _NewTransactionState extends State<NewTransaction> {
                 labelText: 'Amount',
               ),
               controller: amountController,
-              keyboardType: TextInputType.numberWithOptions(decimal:true),
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
               onSubmitted: (_) => submitData(),
             ),
             ElevatedButton(
-              child: Text('Add Transaction'),
+              child: Text(
+                'Add Transaction',
+                style: TextStyle(color: Theme.of(context).primaryColor),
+              ),
               onPressed: submitData,
-              style: ElevatedButton.styleFrom(primary: Colors.green),
+              style: ElevatedButton.styleFrom(
+                  primary: Theme.of(context).accentColor),
             ),
+            Container(
+              padding: EdgeInsets.only(top: 250),
+              alignment: Alignment.bottomCenter,
+              child: Text('Expense Planner developed by TJ Landry @ hubley', style: TextStyle(color: Theme.of(context).textTheme.caption.color),),
+            )
           ],
         ),
       ),
