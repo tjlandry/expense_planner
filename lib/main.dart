@@ -164,12 +164,13 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+      floatingActionButton: FloatingActionButton.extended(
+        label: Text('Add'),
+        icon: Icon(Icons.add),
         onPressed: () => _startAddNewTransaction(context),
       ),
       floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterFloat,
+          FloatingActionButtonLocation.endFloat,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
