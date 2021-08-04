@@ -11,7 +11,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 600,
+      height: 400,
       child: userTransactions.isEmpty
           ? Column(
               children: [
@@ -19,8 +19,16 @@ class TransactionList extends StatelessWidget {
                   'No transactions added yet!',
                   style: Theme.of(context).textTheme.headline6,
                 ),
-                SizedBox(height: 75,),
-                Container(child: Image.asset('assets/images/waiting.png', fit: BoxFit.cover,), height: 200,)
+                SizedBox(
+                  height: 75,
+                ),
+                Container(
+                  child: Image.asset(
+                    'assets/images/waiting.png',
+                    fit: BoxFit.cover,
+                  ),
+                  height: 200,
+                ),
               ],
             )
           : ListView.builder(

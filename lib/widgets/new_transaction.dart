@@ -62,10 +62,11 @@ class _NewTransactionState extends State<NewTransaction> {
               style: ElevatedButton.styleFrom(
                   primary: Theme.of(context).accentColor),
             ),
+            SizedBox(height: 75,),
             Container(
-              padding: EdgeInsets.only(top: 250),
+              padding: EdgeInsets.all(10),
               alignment: Alignment.bottomCenter,
-              child: Text('Expense Planner developed by TJ Landry @ hubley', style: TextStyle(color: Theme.of(context).textTheme.caption.color),),
+              child: Text('Expense Planner developed by TJ Landry', style: TextStyle(color: Theme.of(context).textTheme.caption.color),),
             )
           ],
         ),
